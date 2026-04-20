@@ -17,6 +17,7 @@ Curated long-term memory for this OpenClaw workspace.
 
 ## Canonical links
 
+- [[Home]]
 - [[HEARTBEAT]]
 - [[USER]]
 - [[IDENTITY]]

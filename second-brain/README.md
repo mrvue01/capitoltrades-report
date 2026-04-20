@@ -16,6 +16,7 @@ Suggested subfolders:
 
 Canonical links:
 
+- [[Home]]
 - [[MEMORY]]
 - [[projects/index]]
 - [[directives/index]]

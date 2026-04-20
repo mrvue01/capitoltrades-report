@@ -18,6 +18,7 @@ Examples:
 
 Canonical links:
 
+- [[Home]]
 - [[MEMORY]]
 - [[projects/index]]
 - [[second-brain/README]]

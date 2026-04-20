@@ -10,6 +10,7 @@ Suggested structure:
 
 Current linked context:
 
+- [[Home]]
 - [[MEMORY]]
 - [[second-brain/README]]
 - [[directives/index]]
