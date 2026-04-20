@@ -2,7 +2,10 @@
 
 Welcome to the workspace vault.
 
-## Start here
+> [!info] What this is
+> This vault is both the live OpenClaw workspace and the Obsidian knowledge graph for long-term memory, projects, and directives.
+
+## Quick links
 
 - [[MEMORY]]
 - [[projects/index]]
@@ -11,26 +14,9 @@ Welcome to the workspace vault.
 - [[HEARTBEAT]]
 - [[memory/2026-04-19]]
 
-## What this vault is
+## Main hubs
 
-This vault is both:
-
-- the live OpenClaw workspace
-- the Obsidian knowledge graph for long-term memory and project context
-
-## Recommended views
-
-### Dashboard
-
-Open these first:
-
-- [[MEMORY]] for curated durable context
-- [[memory/2026-04-19]] for today's raw notes
-- [[projects/index]] for project-level notes
-
-### Graph anchors
-
-These notes should become the main hubs in Graph View:
+These notes should become the main anchors in Graph View:
 
 - [[Home]]
 - [[MEMORY]]
@@ -38,17 +24,74 @@ These notes should become the main hubs in Graph View:
 - [[second-brain/README]]
 - [[directives/index]]
 
-## Recent memory
+## Dashboard
+
+### Recent memory notes
 
 ```dataview
-LIST FROM "memory" SORT file.name DESC LIMIT 7
-```
-
-## Recent projects
-
-```dataview
-TABLE file.mtime AS Updated
-FROM "projects"
-SORT file.mtime DESC
+TABLE file.link AS "Note", file.mtime AS "Updated"
+FROM "memory"
+SORT file.name DESC
 LIMIT 10
 ```
+
+### Recent project notes
+
+```dataview
+TABLE file.link AS "Project note", file.folder AS "Folder", file.mtime AS "Updated"
+FROM "projects"
+WHERE file.name != "index"
+SORT file.mtime DESC
+LIMIT 12
+```
+
+### Directives and workflows
+
+```dataview
+TABLE file.link AS "Directive", file.mtime AS "Updated"
+FROM "directives"
+WHERE file.name != "index"
+SORT file.mtime DESC
+LIMIT 12
+```
+
+### Second-brain notes
+
+```dataview
+TABLE file.link AS "Note", file.folder AS "Area", file.mtime AS "Updated"
+FROM "second-brain"
+WHERE file.name != "README"
+SORT file.mtime DESC
+LIMIT 12
+```
+
+### Vault map
+
+```dataview
+LIST FROM ""
+WHERE contains(file.path, "MEMORY.md")
+   OR contains(file.path, "Home.md")
+   OR contains(file.path, "HEARTBEAT.md")
+   OR contains(file.path, "projects/index.md")
+   OR contains(file.path, "directives/index.md")
+   OR contains(file.path, "second-brain/README.md")
+SORT file.name ASC
+```
+
+### Recently touched across the vault
+
+```dataview
+TABLE file.link AS "File", file.folder AS "Folder", file.mtime AS "Updated"
+FROM ""
+WHERE !contains(file.path, ".git/")
+SORT file.mtime DESC
+LIMIT 20
+```
+
+## Suggested next steps
+
+- Open [[MEMORY]] to review curated durable context
+- Open the latest note in `memory/` for recent raw capture
+- Add project notes under `projects/<name>/`
+- Add evergreen notes under `second-brain/concepts/`
+- Add repeatable workflows under `directives/`
