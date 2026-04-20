@@ -12,6 +12,10 @@ Curated long-term memory for this OpenClaw workspace.
 ## Current durable context
 
 - This workspace is being shaped into an Obsidian-friendly OpenClaw memory graph
+- The OpenClaw workspace root is the Obsidian vault
+- Long-term durable context belongs in [[MEMORY]]
+- Daily raw capture belongs in `memory/YYYY-MM-DD.md`
+- Larger topics should live in dedicated notes under `projects/`, `second-brain/`, and `directives/`
 - The packaged skill lives at `dist/obsidian-openclaw-memory.skill`
 - The skill source lives at `obsidian-openclaw-memory/`
 
