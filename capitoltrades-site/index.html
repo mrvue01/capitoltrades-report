@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capitol Trades Daily Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #0b1020; color: #eaf0ff; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 56px; }
+    .hero { background: linear-gradient(135deg,#152042,#0f6ab4); border-radius: 18px; padding: 28px; box-shadow: 0 20px 50px rgba(0,0,0,.28); }
+    h1 { margin: 0 0 10px; font-size: 34px; }
+    p { line-height: 1.5; }
+    .muted { color: #cdd9ff; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+    .btn { background: #fff; color: #102040; text-decoration: none; padding: 12px 16px; border-radius: 10px; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 18px; margin-top: 24px; }
+    .card { background: #111831; border: 1px solid #243158; border-radius: 16px; padding: 18px; }
+    img { width: 100%; height: auto; background: #fff; border-radius: 12px; }
+    ul { padding-left: 18px; }
+    code { background:#16213f; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Capitol Trades Daily Dashboard</h1>
+      <p class="muted">Mobile-friendly landing page for the daily top-5 active and high-volume Capitol Trades report.</p>
+      <div class="buttons">
+        <a class="btn" href="report.html">Open full report</a>
+        <a class="btn" href="assets/top5_activity.svg">Open activity chart</a>
+        <a class="btn" href="assets/top5_volume_score.svg">Open volume chart</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>What’s here</h2>
+        <ul>
+          <li>Current top-5 ranking</li>
+          <li>Brief summary</li>
+          <li>Activity chart</li>
+          <li>Volume chart</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Cloudflare Pages settings</h2>
+        <p>Use this folder as the site root.</p>
+        <p><strong>Build command:</strong> <code>none</code></p>
+        <p><strong>Output directory:</strong> <code>.</code></p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><h2>Activity chart</h2><img src="assets/top5_activity.svg" alt="Activity chart"></div>
+      <div class="card"><h2>Volume chart</h2><img src="assets/top5_volume_score.svg" alt="Volume chart"></div>
+    </div>
+  </div>
+</body>
+</html>
