@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "capitoltrades-report",
+  "compatibility_date": "2026-04-21",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "capitoltrades-site"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
