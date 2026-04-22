@@ -20,8 +20,7 @@ Curated long-term memory for this OpenClaw workspace.
 - The packaged skill lives at `dist/obsidian-openclaw-memory.skill`
 - The skill source lives at `obsidian-openclaw-memory/`
 - If Discord routing breaks, check agent bindings and model overrides before assuming token or permission issues
-- Unattended automations that need shell exec should run in isolated cron sessions, not live Discord-bound sessions, to avoid approval prompts
-- The Capitol Trades Cloudflare Pages site serves `capitoltrades-site`; `deploy/capitoltrades` is only a legacy sync copy
+- Capitol Trades workflow details live in [[projects/capitoltrades/overview]] and [[directives/capitoltrades-publish]]
 
 ## Canonical links
 

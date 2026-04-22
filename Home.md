@@ -9,10 +9,12 @@ Welcome to the workspace vault.
 
 - [[MEMORY]]
 - [[projects/index]]
+- [[projects/capitoltrades/overview]]
 - [[second-brain/README]]
 - [[directives/index]]
+- [[directives/capitoltrades-publish]]
 - [[HEARTBEAT]]
-- [[memory/2026-04-19]]
+- [[memory/2026-04-22-heartbeat-log]]
 
 ## Main hubs
 
@@ -21,8 +23,10 @@ These notes should become the main anchors in Graph View:
 - [[Home]]
 - [[MEMORY]]
 - [[projects/index]]
+- [[projects/capitoltrades/overview]]
 - [[second-brain/README]]
 - [[directives/index]]
+- [[directives/capitoltrades-publish]]
 
 ## Dashboard
 
