@@ -79,7 +79,10 @@ WHERE contains(file.path, "MEMORY.md")
    OR contains(file.path, "Home.md")
    OR contains(file.path, "HEARTBEAT.md")
    OR contains(file.path, "projects/index.md")
+   OR contains(file.path, "projects/capitoltrades/overview.md")
    OR contains(file.path, "directives/index.md")
+   OR contains(file.path, "directives/capitoltrades-publish.md")
+   OR contains(file.path, "directives/discord-routing-check.md")
    OR contains(file.path, "second-brain/README.md")
 SORT file.name ASC
 ```

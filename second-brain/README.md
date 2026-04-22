@@ -19,4 +19,7 @@ Canonical links:
 - [[Home]]
 - [[MEMORY]]
 - [[projects/index]]
+- [[projects/capitoltrades/overview]]
 - [[directives/index]]
+- [[directives/capitoltrades-publish]]
+- [[directives/discord-routing-check]]
