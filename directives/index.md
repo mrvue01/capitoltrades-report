@@ -23,4 +23,5 @@ Canonical links:
 - [[projects/index]]
 - [[projects/capitoltrades/overview]]
 - [[directives/capitoltrades-publish]]
+- [[directives/discord-routing-check]]
 - [[second-brain/README]]

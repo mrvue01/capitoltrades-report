@@ -20,6 +20,7 @@ Curated long-term memory for this OpenClaw workspace.
 - The packaged skill lives at `dist/obsidian-openclaw-memory.skill`
 - The skill source lives at `obsidian-openclaw-memory/`
 - If Discord routing breaks, check agent bindings and model overrides before assuming token or permission issues
+- Discord routing and cleanup steps live in [[directives/discord-routing-check]]
 - Capitol Trades workflow details live in [[projects/capitoltrades/overview]] and [[directives/capitoltrades-publish]]
 
 ## Canonical links
