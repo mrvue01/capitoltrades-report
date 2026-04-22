@@ -1,15 +1,99 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Capitol Trades Daily Report</title>
-<style>body{font-family:Arial,sans-serif;margin:40px;color:#222} h1{margin-bottom:8px} .muted{color:#666} .card{border:1px solid #ddd;border-radius:10px;padding:16px;margin:16px 0} img{max-width:100%;height:auto;border:1px solid #eee;border-radius:8px} table{border-collapse:collapse;width:100%;margin-top:10px} th,td{border:1px solid #ddd;padding:10px;text-align:left} th{background:#f7f7f7}</style></head><body>
-<h1>Capitol Trades, top 5 active and high-volume traders</h1>
-<p class="muted">Compiled from Capitol Trades public editorial summaries and site search snippets, last checked 2026-04-20.</p>
-<div class="card"><strong>Brief summary</strong><ul><li>Ro Khanna appears to be the most active trader by trade count.</li><li>Michael McCaul appears to lead by disclosed dollar volume.</li><li>Suzan DelBene and Josh Gottheimer stand out for fewer but larger trades.</li><li>Mark Green remains notable, but trails this group on both count and inferred volume.</li><li>This ranking is a best-effort public-web summary, not a full raw-database export.</li></ul></div>
-<div class="card"><h2>Top 5 table</h2><table><tr><th>Rank</th><th>Name</th><th>Why included</th><th>Activity signal</th><th>Volume signal</th></tr>
-<tr><td>1</td><td>Michael McCaul</td><td>Explicitly identified as biggest by volume in Capitol Trades article</td><td>6,632 trades in past 3 years</td><td>Hundreds of millions of dollars</td></tr>
-<tr><td>2</td><td>Ro Khanna</td><td>Most active by count, also listed among most active in 2023</td><td>13,000+ trades in past 3 years</td><td>Lower volume than McCaul</td></tr>
-<tr><td>3</td><td>Suzan DelBene</td><td>Much lower count, but repeatedly larger disclosed position sizes</td><td>187 trades in past 3 years</td><td>Single trades up to $5M to $25M</td></tr>
-<tr><td>4</td><td>Josh Gottheimer</td><td>High-volume pattern with many large Microsoft trades</td><td>1,260 trades since 2019</td><td>Most likely exceeds $100M</td></tr>
-<tr><td>5</td><td>Mark Green</td><td>Frequently watched active trader in Capitol Trades summary</td><td>600+ trades in past 3 years</td><td>Meaningful but below top tier here</td></tr>
-</table></div>
-<div class="card"><h2>Charts</h2><img src="top5_activity.svg" alt="Activity chart"><br><br><img src="top5_volume_score.svg" alt="Volume chart"></div>
-<div class="card"><h2>Sources</h2><ul><li>https://www.capitoltrades.com/articles/who-are-the-biggest-stock-market-traders-in-congress-2022-10-03</li><li>https://www.capitoltrades.com/press/congressional-stock-trading-who-trades-and-makes-the-most-2024-04-02</li></ul></div>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Capitol Trades Daily Report</title>
+<style>
+:root{--bg:#06111f;--panel:#0e1b31;--panel-soft:rgba(14,27,49,.82);--text:#edf4ff;--muted:#9bb0cd;--line:#243858;--accent:#3b82f6;--accent2:#22d3ee;--gold:#fbbf24;--success:#10b981;--rose:#fb7185}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#16335d 0%,#08111f 38%,#050b15 100%);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:1120px;margin:0 auto;padding:28px 18px 44px}.hero{position:relative;display:grid;gap:20px;background:linear-gradient(145deg,rgba(59,130,246,.22),rgba(34,211,238,.08) 38%,rgba(14,27,49,.92));border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:28px;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden}.hero:before{content:"";position:absolute;inset:auto -40px -40px auto;width:220px;height:220px;background:radial-gradient(circle,rgba(34,211,238,.22),rgba(34,211,238,0));pointer-events:none}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8de7f8;font-weight:800}.hero h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:1.01;max-width:900px}.hero p{margin:0;color:var(--muted);font-size:16px;max-width:780px;line-height:1.6}.hero-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.stat{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:16px 18px;backdrop-filter:blur(12px)}.stat .label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}.stat .value{margin-top:8px;font-size:24px;font-weight:800}.stat .sub{margin-top:6px;font-size:13px;color:#b9c7df}
+.market-movers{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.mover-feature{padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08)}.mover-feature .tag{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(251,191,36,.14);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.mover-feature h3{margin:12px 0 8px;font-size:28px}.mover-feature p{margin:0;color:#d7e6ff;line-height:1.55}.mover-side{display:grid;gap:12px}.mini-mover{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.avatar{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff;background:linear-gradient(135deg,#2563eb,#22d3ee);box-shadow:0 10px 22px rgba(37,99,235,.28);flex:0 0 54px}.avatar.gold{background:linear-gradient(135deg,#f59e0b,#fcd34d);color:#3b2400}.avatar.green{background:linear-gradient(135deg,#059669,#34d399)}.avatar.rose{background:linear-gradient(135deg,#e11d48,#fb7185)}.avatar.indigo{background:linear-gradient(135deg,#4338ca,#818cf8)}.avatar.slate{background:linear-gradient(135deg,#334155,#64748b)}.mini-mover .meta{display:grid;gap:2px}.mini-mover .meta strong{font-size:16px}.mini-mover .meta span{font-size:13px;color:var(--muted)}
+.section{margin-top:20px}.card{background:linear-gradient(180deg,rgba(14,27,49,.96),rgba(10,21,38,.96));border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 14px 34px rgba(0,0,0,.22)}.card h2{margin:0 0 14px 0;font-size:22px;letter-spacing:-.01em}.muted{color:var(--muted)}
+.summary-list{margin:0;padding-left:18px;display:grid;gap:10px;color:#dbe8ff;line-height:1.5}.grid-2{display:block}.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.18);font-size:13px;color:#c9f7ff}.summary-card{width:100%}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:760px}.table th,.table td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.table th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.rank{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:999px;background:rgba(251,191,36,.15);color:var(--gold);font-weight:800}.name{font-weight:700}.signal{color:#d9e3ff}.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.chart-card{padding:16px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line)}.chart-card h3{margin:0 0 6px;font-size:18px}.chart-card p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.5}.chart-card img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#fff}a{color:#a9d0ff;text-decoration:none;word-break:break-word}a:hover{text-decoration:underline}.sources{margin:0;padding-left:18px;display:grid;gap:8px}.mobile-cards{display:none}.sticky-link{display:none}
+@media (max-width:820px){.hero-grid,.grid-2,.market-movers,.charts{grid-template-columns:1fr}.container{padding:18px 14px 34px}.hero,.card{padding:18px}.hero h1{font-size:34px}}
+@media (max-width:640px){body{font-size:15px}.container{padding:0 0 26px}.hero{border-radius:0 0 24px 24px;padding:20px 14px 18px;gap:14px}.hero h1{font-size:28px}.hero p{font-size:15px}.section{margin-top:14px;padding:0 10px}.stat{padding:14px;border-radius:16px}.stat .value{font-size:20px}.mover-feature{padding:16px;border-radius:18px}.mover-feature h3{font-size:24px}.mini-mover{padding:12px 14px}.avatar{width:46px;height:46px;font-size:15px;flex-basis:46px}.card{padding:16px;border-radius:18px}.card h2{font-size:19px}.pill{font-size:12px}.table-wrap{display:none}.mobile-cards{display:grid;gap:12px}.mobile-rank{padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.03)}.mobile-rank .top{display:flex;align-items:center;gap:10px;margin-bottom:10px}.mobile-rank .meta{display:grid;gap:8px}.mobile-rank .meta div{font-size:14px;line-height:1.45}.mobile-rank .meta strong{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}.sources{padding-left:18px}.chart-card{padding:14px}.chart-card img{border-radius:12px}.sticky-link{position:sticky;bottom:0;display:block;padding:10px;background:linear-gradient(180deg,rgba(5,11,21,0),rgba(5,11,21,.92) 35%,rgba(5,11,21,.98));z-index:20}.sticky-link a{display:flex;align-items:center;justify-content:center;width:100%;padding:14px 16px;border-radius:16px;background:linear-gradient(180deg,#2563eb,#1d4ed8);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 24px rgba(29,78,216,.35)}}
+</style></head><body>
+<div class="container">
+  <section class="hero">
+    <div class="eyebrow">Scheduled 5am CT Capitol Trades report</div>
+    <h1>Capitol Trades top 5 active and high-volume traders</h1>
+    <p>Daily snapshot for 2026-04-22 using current public Capitol Trades profile totals, plus Capitol Trades editorial context on who consistently leads by activity and disclosed volume.</p>
+    <div class="hero-grid">
+      <div class="stat"><div class="label">Last checked</div><div class="value">2026-04-22</div><div class="sub">Public Capitol Trades profile pages</div></div>
+      <div class="stat"><div class="label">Most active trader</div><div class="value">Ro Khanna</div><div class="sub">12,123 reported trades</div></div>
+      <div class="stat"><div class="label">Largest volume signal</div><div class="value">Michael McCaul</div><div class="sub">$514.65M disclosed volume</div></div>
+    </div>
+    <div class="market-movers">
+      <div class="mover-feature">
+        <div class="tag">Top mover</div>
+        <h3>Michael McCaul</h3>
+        <p>McCaul remains the clearest disclosed volume leader on the public Capitol Trades profile pages checked this morning, while still posting 4,645 total reported trades, enough to stay in the top tier on both size and activity.</p>
+      </div>
+      <div class="mover-side">
+        <div class="mini-mover"><div class="avatar gold">MM</div><div class="meta"><strong>Michael McCaul</strong><span>Volume leader, $514.65M</span></div></div>
+        <div class="mini-mover"><div class="avatar">RK</div><div class="meta"><strong>Ro Khanna</strong><span>Activity leader, 12,123 trades</span></div></div>
+        <div class="mini-mover"><div class="avatar indigo">JG</div><div class="meta"><strong>Josh Gottheimer</strong><span>Balanced high-volume profile, $184.80M</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>Quick take</h2>
+    <ul class="summary-list">
+      <li>Ro Khanna is still the pure activity standout, with 12,123 reported trades, comfortably ahead of every other name checked.</li>
+      <li>Michael McCaul is still the dominant disclosed-volume name at $514.65M, more than double Khanna’s current public total.</li>
+      <li>Josh Gottheimer holds a strong hybrid slot, with both meaningful scale, $184.80M, and a substantial 1,405 reported trades.</li>
+      <li>Suzan DelBene remains relevant because relatively low trade count, 174, still maps to meaningful disclosed size, $42.96M, preserving the large-ticket signal noted in Capitol Trades editorial coverage.</li>
+      <li>Mark Green rounds out this morning’s continuity top 5 from the long-running Capitol Trades editorial set, though his current public totals are materially below the top four.</li>
+    </ul>
+  </section>
+
+  <section class="section card">
+    <h2>Top 5 ranking</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <tr><th>Rank</th><th>Name</th><th>Why included</th><th>Activity signal</th><th>Volume signal</th></tr>
+        <tr><td><span class="rank">1</span></td><td class="name"><div class="mini-mover" style="padding:0;border:none;background:none"><div class="avatar gold">MM</div><div class="meta"><strong>Michael McCaul</strong><span>Volume leader</span></div></div></td><td>Highest disclosed volume on the public profiles checked today, while remaining highly active.</td><td class="signal">4,645 trades</td><td class="signal">$514.65M volume</td></tr>
+        <tr><td><span class="rank">2</span></td><td class="name"><div class="mini-mover" style="padding:0;border:none;background:none"><div class="avatar">RK</div><div class="meta"><strong>Ro Khanna</strong><span>Activity leader</span></div></div></td><td>Clear trade-count leader by a wide margin, and still a very large disclosed-volume name.</td><td class="signal">12,123 trades</td><td class="signal">$210.40M volume</td></tr>
+        <tr><td><span class="rank">3</span></td><td class="name"><div class="mini-mover" style="padding:0;border:none;background:none"><div class="avatar indigo">JG</div><div class="meta"><strong>Josh Gottheimer</strong><span>Balanced leader</span></div></div></td><td>Strongest blend after the top two, combining four-digit activity with near-$185M disclosed volume.</td><td class="signal">1,405 trades</td><td class="signal">$184.80M volume</td></tr>
+        <tr><td><span class="rank">4</span></td><td class="name"><div class="mini-mover" style="padding:0;border:none;background:none"><div class="avatar green">SD</div><div class="meta"><strong>Suzan DelBene</strong><span>Large-ticket profile</span></div></div></td><td>Still a meaningful size signal despite much lower turnover, matching Capitol Trades’ prior emphasis on large-ticket disclosures.</td><td class="signal">174 trades</td><td class="signal">$42.96M volume</td></tr>
+        <tr><td><span class="rank">5</span></td><td class="name"><div class="mini-mover" style="padding:0;border:none;background:none"><div class="avatar slate">MG</div><div class="meta"><strong>Mark Green</strong><span>Legacy top-5 hold</span></div></div></td><td>Retained in the daily set for continuity with Capitol Trades’ long-running top-trader editorial list, but well behind the current leaders.</td><td class="signal">52 trades</td><td class="signal">$8.34M volume</td></tr>
+      </table>
+    </div>
+    <div class="mobile-cards">
+      <div class="mobile-rank"><div class="top"><span class="rank">1</span><div class="avatar gold">MM</div><div class="name">Michael McCaul</div></div><div class="meta"><div><strong>Why included</strong>Highest disclosed volume on the public profiles checked today, while remaining highly active.</div><div><strong>Activity signal</strong>4,645 trades</div><div><strong>Volume signal</strong>$514.65M volume</div></div></div>
+      <div class="mobile-rank"><div class="top"><span class="rank">2</span><div class="avatar">RK</div><div class="name">Ro Khanna</div></div><div class="meta"><div><strong>Why included</strong>Clear trade-count leader by a wide margin, and still a very large disclosed-volume name.</div><div><strong>Activity signal</strong>12,123 trades</div><div><strong>Volume signal</strong>$210.40M volume</div></div></div>
+      <div class="mobile-rank"><div class="top"><span class="rank">3</span><div class="avatar indigo">JG</div><div class="name">Josh Gottheimer</div></div><div class="meta"><div><strong>Why included</strong>Strongest blend after the top two, combining four-digit activity with near-$185M disclosed volume.</div><div><strong>Activity signal</strong>1,405 trades</div><div><strong>Volume signal</strong>$184.80M volume</div></div></div>
+      <div class="mobile-rank"><div class="top"><span class="rank">4</span><div class="avatar green">SD</div><div class="name">Suzan DelBene</div></div><div class="meta"><div><strong>Why included</strong>Still a meaningful size signal despite much lower turnover, matching Capitol Trades’ prior emphasis on large-ticket disclosures.</div><div><strong>Activity signal</strong>174 trades</div><div><strong>Volume signal</strong>$42.96M volume</div></div></div>
+      <div class="mobile-rank"><div class="top"><span class="rank">5</span><div class="avatar slate">MG</div><div class="name">Mark Green</div></div><div class="meta"><div><strong>Why included</strong>Retained in the daily set for continuity with Capitol Trades’ long-running top-trader editorial list, but well behind the current leaders.</div><div><strong>Activity signal</strong>52 trades</div><div><strong>Volume signal</strong>$8.34M volume</div></div></div>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>Charts</h2>
+    <div class="charts">
+      <div class="chart-card">
+        <h3>Activity leaderboard</h3>
+        <p>Ro Khanna stays far ahead on trade count, with Michael McCaul a distant but still substantial second.</p>
+        <img src="top5_activity.svg" alt="Activity chart">
+      </div>
+      <div class="chart-card">
+        <h3>Volume leaderboard</h3>
+        <p>Michael McCaul keeps the widest disclosed-volume edge, followed by Ro Khanna and Josh Gottheimer.</p>
+        <img src="top5_volume_score.svg" alt="Volume chart">
+      </div>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li><a href="https://www.capitoltrades.com/press/congressional-stock-trading-who-trades-and-makes-the-most-2024-04-02">Capitol Trades press summary on who trades and makes the most</a></li>
+      <li><a href="https://www.capitoltrades.com/articles/who-are-the-biggest-stock-market-traders-in-congress-2022-10-03">Capitol Trades article on biggest stock market traders in Congress</a></li>
+      <li><a href="https://www.capitoltrades.com/politicians/M001157">Michael McCaul profile</a></li>
+      <li><a href="https://www.capitoltrades.com/politicians/K000389">Ro Khanna profile</a></li>
+      <li><a href="https://www.capitoltrades.com/politicians/G000583">Josh Gottheimer profile</a></li>
+      <li><a href="https://www.capitoltrades.com/politicians/D000617">Suzan DelBene profile</a></li>
+      <li><a href="https://www.capitoltrades.com/politicians/G000590">Mark Green profile</a></li>
+    </ul>
+  </section>
+  <div class="sticky-link"><a href="https://capitoltrades-report.pages.dev/">Open live dashboard</a></div>
+</div>
 </body></html>
