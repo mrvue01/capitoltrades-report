@@ -13,6 +13,7 @@ Welcome to the workspace vault.
 - [[second-brain/README]]
 - [[directives/index]]
 - [[directives/capitoltrades-publish]]
+- [[directives/discord-routing-check]]
 - [[HEARTBEAT]]
 - [[memory/2026-04-22-heartbeat-log]]
 
@@ -27,6 +28,7 @@ These notes should become the main anchors in Graph View:
 - [[second-brain/README]]
 - [[directives/index]]
 - [[directives/capitoltrades-publish]]
+- [[directives/discord-routing-check]]
 
 ## Dashboard
 
