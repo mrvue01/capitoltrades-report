@@ -14,3 +14,4 @@ Current linked context:
 - [[MEMORY]]
 - [[second-brain/README]]
 - [[directives/index]]
+- [[projects/capitoltrades/overview]]

@@ -30,5 +30,6 @@ Curated long-term memory for this OpenClaw workspace.
 - [[USER]]
 - [[IDENTITY]]
 - [[projects/index]]
+- [[projects/capitoltrades/overview]]
 - [[second-brain/README]]
 - [[directives/index]]
