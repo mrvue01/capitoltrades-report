@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe AI Use Setup</title>
+    <meta
+      name="description"
+      content="Safe AI Use Setup for Small Businesses. Practical AI policy, approved tools guidance, staff training, and rollout support."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1117;
+        --bg-soft: #171b24;
+        --panel: rgba(255, 255, 255, 0.06);
+        --panel-strong: rgba(255, 255, 255, 0.1);
+        --text: #f6f2ea;
+        --muted: #b8b1a5;
+        --line: rgba(255, 255, 255, 0.12);
+        --gold: #ddb978;
+        --gold-soft: rgba(221, 185, 120, 0.18);
+        --mint: #97e7d5;
+        --danger: #ff8b8b;
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+        --radius: 28px;
+        --max: 1180px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(221, 185, 120, 0.14), transparent 28%),
+          radial-gradient(circle at 85% 15%, rgba(151, 231, 213, 0.12), transparent 22%),
+          linear-gradient(180deg, #0b0d12 0%, #0f1117 45%, #121620 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+        background-size: 36px 36px;
+        mask-image: radial-gradient(circle at center, black 38%, transparent 85%);
+        opacity: 0.5;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .wrap { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(18px);
+        background: rgba(11, 13, 18, 0.65);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .brand-mark {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--gold), #8a6a32);
+        color: #17120b;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        box-shadow: 0 12px 30px rgba(221, 185, 120, 0.28);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover { color: var(--text); }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.95rem 1.35rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      }
+
+      .button:hover { transform: translateY(-1px); }
+      .button-primary {
+        background: linear-gradient(135deg, var(--gold), #f1d39e);
+        color: #17120b;
+        box-shadow: 0 18px 35px rgba(221, 185, 120, 0.24);
+      }
+      .button-secondary {
+        background: rgba(255,255,255,0.03);
+        border-color: var(--line);
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 5.5rem 0 4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        border: 1px solid rgba(221, 185, 120, 0.28);
+        color: #f7dfb1;
+        font-size: 0.83rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1, h2, h3 { margin: 0; }
+      h1 {
+        margin-top: 1rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3.4rem, 7vw, 6.6rem);
+        line-height: 0.92;
+        letter-spacing: -0.03em;
+        max-width: 11ch;
+      }
+
+      .hero p {
+        margin: 1.35rem 0 0;
+        font-size: 1.08rem;
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 62ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      .stat-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2.2rem;
+      }
+
+      .stat {
+        min-width: 150px;
+        padding: 1rem 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.03);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .hero-card {
+        position: relative;
+        padding: 1.5rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-card::after {
+        content: "";
+        position: absolute;
+        inset: auto -20% -40% auto;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(221,185,120,0.25), transparent 70%);
+      }
+
+      .risk-board {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .risk-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .audit-list {
+        display: grid;
+        gap: 0.85rem;
+        margin-top: 1.4rem;
+      }
+
+      .audit-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.95rem 1rem;
+        background: rgba(8, 10, 14, 0.42);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 16px;
+      }
+
+      .audit-item span:last-child {
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      .section {
+        padding: 2rem 0 5rem;
+      }
+
+      .section-title {
+        margin-bottom: 1.35rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 3.6rem);
+      }
+
+      .section-lead {
+        max-width: 65ch;
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .problem-grid,
+      .deliver-grid,
+      .audience-grid,
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.4rem;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      }
+
+      .card .label {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        margin-bottom: 0.8rem;
+      }
+
+      .card p, .card li {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .card ul {
+        margin: 0.8rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .pricing {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 1rem;
+      }
+
+      .price-card {
+        padding: 1.8rem;
+        border-radius: 28px;
+        border: 1px solid rgba(221, 185, 120, 0.25);
+        background: linear-gradient(180deg, rgba(221,185,120,0.12), rgba(255,255,255,0.03));
+        box-shadow: var(--shadow);
+      }
+
+      .price {
+        font-size: clamp(2.6rem, 6vw, 4.5rem);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0.8rem 0;
+      }
+
+      .price small {
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .checklist {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+      }
+
+      .check {
+        display: flex;
+        gap: 0.8rem;
+        align-items: flex-start;
+      }
+
+      .check i {
+        font-style: normal;
+        width: 1.45rem;
+        height: 1.45rem;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(151, 231, 213, 0.14);
+        color: var(--mint);
+        flex: none;
+        margin-top: 0.05rem;
+      }
+
+      .cta {
+        margin: 1rem 0 5rem;
+        padding: 2rem;
+        border-radius: 32px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background:
+          radial-gradient(circle at 15% 20%, rgba(221,185,120,0.18), transparent 25%),
+          radial-gradient(circle at 80% 30%, rgba(151,231,213,0.12), transparent 22%),
+          linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+        box-shadow: var(--shadow);
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .footer {
+        padding: 0 0 3rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: rise 800ms ease forwards;
+      }
+      .reveal:nth-child(2) { animation-delay: 120ms; }
+      .reveal:nth-child(3) { animation-delay: 220ms; }
+      .reveal:nth-child(4) { animation-delay: 320ms; }
+
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .pricing,
+        .cta-grid,
+        .problem-grid,
+        .deliver-grid,
+        .audience-grid,
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        h1 {
+          max-width: 12ch;
+          line-height: 0.98;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding-top: 3.8rem;
+        }
+
+        .hero-actions,
+        .stat-row {
+          flex-direction: column;
+        }
+
+        .button { width: 100%; }
+        .cta { padding: 1.35rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark">A</span>
+          <span>Safe AI Use Setup</span>
+        </a>
+        <div class="nav-links">
+          <a href="#problem">Risk</a>
+          <a href="#solution">Solution</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#process">Process</a>
+          <a class="button button-secondary" href="#contact">Book a Call</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow reveal">Practical AI governance for small business teams</div>
+            <h1 class="reveal">Let your team use AI without inviting chaos.</h1>
+            <p class="reveal">
+              We help small businesses create clear rules for ChatGPT, Copilot, Claude, and similar tools, so employees can move faster without exposing client data, creating compliance headaches, or shipping unchecked AI output.
+            </p>
+            <div class="hero-actions reveal">
+              <a class="button button-primary" href="#contact">Book a discovery call</a>
+              <a class="button button-secondary" href="#pricing">See the $999 starter package</a>
+            </div>
+            <div class="stat-row reveal">
+              <div class="stat">
+                <strong>5-25</strong>
+                <span>employee sweet spot</span>
+              </div>
+              <div class="stat">
+                <strong>1-2 weeks</strong>
+                <span>to launch your policy pack</span>
+              </div>
+              <div class="stat">
+                <strong>90-day</strong>
+                <span>rollout plan included</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card reveal" aria-label="Risk snapshot panel">
+            <div class="risk-board">
+              <span class="risk-chip">Shadow AI risk is already here</span>
+              <h3 style="font-size: 1.65rem; max-width: 12ch;">What usually goes wrong before policy exists</h3>
+              <div class="audit-list">
+                <div class="audit-item"><span>Client data pasted into public tools</span><span>High risk</span></div>
+                <div class="audit-item"><span>Managers do not know what tools staff use</span><span>Blind spot</span></div>
+                <div class="audit-item"><span>AI-generated output sent without review</span><span>Quality risk</span></div>
+                <div class="audit-item"><span>No approved tools list or ownership</span><span>Control gap</span></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="problem">
+        <div class="wrap">
+          <h2 class="section-title">The problem is not AI. The problem is unmanaged AI.</h2>
+          <p class="section-lead">
+            Most small businesses are already experimenting with AI, but very few have written rules, approval paths, or practical guardrails. That leaves owners exposed to data leakage, inconsistent quality, and compliance trouble they did not mean to create.
+          </p>
+          <div class="problem-grid">
+            <article class="card">
+              <div class="label">Data exposure</div>
+              <h3>Staff enter the wrong information</h3>
+              <p>Client records, contracts, HR details, and internal documents can end up inside tools that were never approved for that kind of data.</p>
+            </article>
+            <article class="card">
+              <div class="label">Output risk</div>
+              <h3>AI answers get treated like facts</h3>
+              <p>Without human review rules, teams can send polished but inaccurate work to clients, managers, or the public.</p>
+            </article>
+            <article class="card">
+              <div class="label">Oversight gap</div>
+              <h3>No one owns the process</h3>
+              <p>New tools appear, employees improvise, and leadership has no clean view of what is allowed, restricted, or prohibited.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solution">
+        <div class="wrap">
+          <h2 class="section-title">A small-business AI policy pack that feels practical, not bureaucratic.</h2>
+          <p class="section-lead">
+            This offer is designed for firms that want to use AI responsibly, without drowning in enterprise jargon. You get a clear framework, not a binder full of theory.
+          </p>
+          <div class="deliver-grid">
+            <article class="card">
+              <div class="label">Included</div>
+              <h3>Risk assessment</h3>
+              <p>We review current AI usage, sensitive workflows, approval gaps, and the biggest policy blind spots.</p>
+            </article>
+            <article class="card">
+              <div class="label">Included</div>
+              <h3>Custom AI use policy</h3>
+              <p>A plain-English policy tailored to your business, with allowed uses, prohibited uses, data rules, and human review requirements.</p>
+            </article>
+            <article class="card">
+              <div class="label">Included</div>
+              <h3>Approved tools matrix</h3>
+              <p>A simple guide showing which tools are approved, what they can be used for, what data is off limits, and who owns approvals.</p>
+            </article>
+            <article class="card">
+              <div class="label">Included</div>
+              <h3>Staff training</h3>
+              <p>A focused training session that explains safe usage, common mistakes, and what employees must do before using AI for work.</p>
+            </article>
+            <article class="card">
+              <div class="label">Included</div>
+              <h3>Rollout plan</h3>
+              <p>A 90-day plan so the policy is actually adopted, instead of getting saved in a folder and forgotten.</p>
+            </article>
+            <article class="card">
+              <div class="label">Optional</div>
+              <h3>Quarterly review</h3>
+              <p>Ongoing updates for new tools, policy changes, refresher training, and manager support as your usage evolves.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <h2 class="section-title">Best fit clients</h2>
+          <p class="section-lead">This works especially well for small teams that handle sensitive information and want AI productivity without careless risk.</p>
+          <div class="audience-grid">
+            <article class="card"><div class="label">Professional services</div><h3>Accounting firms</h3><p>Financial data, client confidentiality, and growing AI experimentation make policy clarity valuable fast.</p></article>
+            <article class="card"><div class="label">Professional services</div><h3>Law firms</h3><p>Confidentiality, document handling, and human review requirements need tighter rules than casual AI use allows.</p></article>
+            <article class="card"><div class="label">Advisory teams</div><h3>Insurance, HR, agencies</h3><p>Client-facing content, private records, and fast-moving workflows create lots of opportunity for mistakes without a framework.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="wrap pricing">
+          <article class="price-card">
+            <div class="eyebrow">Starter package</div>
+            <h2 class="section-title" style="margin-top: 1rem; margin-bottom: 0;">AI Governance Starter</h2>
+            <div class="price">$999 <small>flat fee</small></div>
+            <p style="color: var(--muted); line-height: 1.8;">A clean starting package for small businesses with 5 to 25 employees that need practical rules around employee AI use.</p>
+            <div class="checklist">
+              <div class="check"><i>✓</i><div>Discovery call and intake review</div></div>
+              <div class="check"><i>✓</i><div>Current-state AI risk assessment</div></div>
+              <div class="check"><i>✓</i><div>Written AI use policy</div></div>
+              <div class="check"><i>✓</i><div>Approved tools matrix</div></div>
+              <div class="check"><i>✓</i><div>Staff training session</div></div>
+              <div class="check"><i>✓</i><div>90-day rollout plan</div></div>
+            </div>
+          </article>
+
+          <article class="card" style="padding: 1.8rem;">
+            <div class="label">Why this format works</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">Productized, understandable, and easy to buy.</h3>
+            <ul>
+              <li>You are not selling vague “AI consulting”.</li>
+              <li>You are solving a specific problem owners already feel.</li>
+              <li>You can deliver it in 1 to 2 weeks without heavy tooling.</li>
+              <li>It naturally leads into a quarterly support retainer.</li>
+            </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line);">
+              <div class="label">Optional retainer</div>
+              <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Quarterly AI Governance Review</h3>
+              <p style="margin: 0; color: var(--muted); line-height: 1.8;">Starting at $149 to $299/month for policy updates, new tool reviews, refresher training, and manager guidance.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="wrap">
+          <h2 class="section-title">Simple delivery process</h2>
+          <div class="steps-grid">
+            <article class="card"><div class="label">Step 1</div><h3>Discovery</h3><p>Understand current AI usage, pain points, sensitivity of data, and who needs to approve policy.</p></article>
+            <article class="card"><div class="label">Step 2</div><h3>Assessment</h3><p>Map current tools, identify policy gaps, and score the biggest risks that need immediate guardrails.</p></article>
+            <article class="card"><div class="label">Step 3</div><h3>Policy pack</h3><p>Create the AI use policy, approved tools matrix, and practical rules for data handling and human review.</p></article>
+            <article class="card"><div class="label">Step 4</div><h3>Training</h3><p>Walk the team through approved use, prohibited use, common mistakes, and escalation paths.</p></article>
+            <article class="card"><div class="label">Step 5</div><h3>Rollout</h3><p>Set ownership, share the 90-day plan, and help leadership turn policy into everyday behavior.</p></article>
+            <article class="card"><div class="label">Step 6</div><h3>Review</h3><p>Optionally stay involved through quarterly updates as tools, workflows, and risks change.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap cta" id="contact">
+        <div class="cta-grid">
+          <div>
+            <div class="eyebrow">Next step</div>
+            <h2 class="section-title" style="margin-top: 1rem; margin-bottom: 0.8rem;">Book a short call and see whether your business needs this.</h2>
+            <p style="color: var(--muted); line-height: 1.8; max-width: 56ch;">
+              If your team is already using AI informally, a lightweight governance setup can reduce risk quickly without slowing everyone down. Replace the contact details below with your real booking link and email.
+            </p>
+          </div>
+          <div class="card" style="padding: 1.6rem;">
+            <div class="label">Contact placeholder</div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem;">Your business here</h3>
+            <p style="margin: 0 0 0.8rem; color: var(--muted);">hello@yourbusiness.com</p>
+            <p style="margin: 0 0 1.2rem; color: var(--muted);">yourbusiness.com/book</p>
+            <a class="button button-primary" href="mailto:hello@yourbusiness.com">Email to book a call</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap footer">
+      Standalone preview page for your AI Governance Setup offer. Swap placeholder contact details before publishing.
+    </footer>
+  </body>
+</html>
