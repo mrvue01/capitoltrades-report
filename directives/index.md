@@ -21,4 +21,6 @@ Canonical links:
 - [[Home]]
 - [[MEMORY]]
 - [[projects/index]]
+- [[projects/capitoltrades/overview]]
+- [[directives/capitoltrades-publish]]
 - [[second-brain/README]]

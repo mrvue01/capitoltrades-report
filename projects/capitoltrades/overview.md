@@ -21,3 +21,4 @@ Daily Capitol Trades report and Cloudflare Pages publishing workflow.
 - [[projects/index]]
 - [[MEMORY]]
 - [[directives/index]]
+- [[directives/capitoltrades-publish]]
