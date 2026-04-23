@@ -16,7 +16,7 @@ Welcome to the workspace vault.
 - [[directives/discord-routing-check]]
 - [[directives/memory-graph-conventions]]
 - [[HEARTBEAT]]
-- [[memory/2026-04-22-heartbeat-log]]
+- [[memory/2026-04-23]]
 
 ## Main hubs
 
