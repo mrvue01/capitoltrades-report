@@ -34,3 +34,6 @@ Curated long-term memory for this OpenClaw workspace.
 - [[projects/capitoltrades/overview]]
 - [[second-brain/README]]
 - [[directives/index]]
+- [[directives/capitoltrades-publish]]
+- [[directives/discord-routing-check]]
+- [[directives/memory-graph-conventions]]
