@@ -14,6 +14,7 @@ Welcome to the workspace vault.
 - [[directives/index]]
 - [[directives/capitoltrades-publish]]
 - [[directives/discord-routing-check]]
+- [[directives/memory-graph-conventions]]
 - [[HEARTBEAT]]
 - [[memory/2026-04-22-heartbeat-log]]
 
@@ -29,6 +30,7 @@ These notes should become the main anchors in Graph View:
 - [[directives/index]]
 - [[directives/capitoltrades-publish]]
 - [[directives/discord-routing-check]]
+- [[directives/memory-graph-conventions]]
 
 ## Dashboard
 
@@ -83,6 +85,7 @@ WHERE contains(file.path, "MEMORY.md")
    OR contains(file.path, "directives/index.md")
    OR contains(file.path, "directives/capitoltrades-publish.md")
    OR contains(file.path, "directives/discord-routing-check.md")
+   OR contains(file.path, "directives/memory-graph-conventions.md")
    OR contains(file.path, "second-brain/README.md")
 SORT file.name ASC
 ```
