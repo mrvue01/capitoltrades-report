@@ -23,3 +23,4 @@ Canonical links:
 - [[directives/index]]
 - [[directives/capitoltrades-publish]]
 - [[directives/discord-routing-check]]
+- [[directives/memory-graph-conventions]]
