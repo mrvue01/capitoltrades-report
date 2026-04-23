@@ -31,6 +31,7 @@ Publish the daily Capitol Trades report to the Cloudflare Pages site and keep th
 - Updated `deploy/capitoltrades`
 - Git commit on `main`
 - Refreshed live site
+- Successful unattended 5am CT scheduled runs when executed from an isolated cron session
 
 ## Related links
 
