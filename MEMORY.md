@@ -23,6 +23,7 @@ Curated long-term memory for this OpenClaw workspace.
 - If Discord routing breaks, check agent bindings and model overrides before assuming token or permission issues
 - Discord routing and cleanup steps live in [[directives/discord-routing-check]]
 - Capitol Trades workflow details live in [[projects/capitoltrades/overview]] and [[directives/capitoltrades-publish]]
+- Capitol Trades publish and Discord delivery should be treated as separate stages when verifying automation health
 
 ## Canonical links
 
