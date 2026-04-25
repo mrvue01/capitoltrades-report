@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
   <title id="title">Capitol Trades top 5 volume leaderboard</title>
-  <desc id="desc">Bar chart of disclosed volume in millions of dollars for five congressional traders as checked at 5:00am CT on 2026-04-24.</desc>
+  <desc id="desc">Bar chart of disclosed volume in millions of dollars for five congressional traders as checked at 5:00am CT on 2026-04-25.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#130d03"/>
@@ -13,7 +13,7 @@
   </defs>
   <rect width="1200" height="720" rx="32" fill="url(#bg)"/>
   <text x="70" y="90" fill="#fff7e6" font-size="34" font-family="Inter,Arial,sans-serif" font-weight="800">Volume leaderboard</text>
-  <text x="70" y="126" fill="#e6c98c" font-size="20" font-family="Inter,Arial,sans-serif">Disclosed volume from Capitol Trades public politician pages, checked 2026-04-24 5:00am CT</text>
+  <text x="70" y="126" fill="#e6c98c" font-size="20" font-family="Inter,Arial,sans-serif">Disclosed volume from Capitol Trades public politician pages, checked 2026-04-25 5:00am CT</text>
   <g font-family="Inter,Arial,sans-serif" font-size="22" fill="#fff7e6">
     <text x="70" y="210">Michael McCaul</text>
     <rect x="310" y="182" width="760" height="46" rx="16" fill="rgba(255,255,255,0.08)"/>
