@@ -25,6 +25,7 @@ Publish the daily Capitol Trades report to the Cloudflare Pages site and keep th
 - `capitoltrades-site` is the canonical Cloudflare Pages root, not `deploy/capitoltrades`
 - If no files changed, the script exits without a commit
 - Publish success does not guarantee downstream Discord delivery, which may need separate handling or verification
+- Immediate Cloudflare Pages checks can briefly show the prior day while edge propagation catches up
 
 ## Outputs
 

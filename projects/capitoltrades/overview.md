@@ -11,6 +11,7 @@ Daily Capitol Trades report and Cloudflare Pages publishing workflow.
 - Unattended runs should use isolated cron sessions so shell exec can proceed without live Discord-session approval prompts
 - The scheduled 5am CT run successfully updated and published the report on 2026-04-23 without an approval interruption
 - The scheduled 5am CT run also completed successfully on 2026-04-25, but the intended Discord delivery was not sent automatically
+- The scheduled 5am CT run completed successfully on 2026-04-26, and the immediate Cloudflare recheck still appeared to show the prior day while propagation caught up
 
 ## Outputs
 
